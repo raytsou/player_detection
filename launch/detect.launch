@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="rate" default="20" />
+  <arg name="screen_msg" default="/screencap/image" />
+
+  <node name="player_detection_node" pkg="player_detection" type="player_detection_node.py" output="screen" clear_params="true">
+    <param name="~rate" value="$(arg rate)" />
+    <param name="~screen_msg" value="$(arg screen_msg)" />
+  </node>
+</launch>
