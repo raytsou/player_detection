@@ -1,0 +1,3 @@
+[submodule "include/Sequoia"]
+	path = include/Sequoia
+	url = https://github.com/IgaoGuru/Sequoia.git
