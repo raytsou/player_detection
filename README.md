@@ -1,6 +1,6 @@
 # Overview
 
-This is a ROS node that takes images and detects whether a T or CT player model from CS:GO is present. We prioritize detection on GPU (supports both both nVidia and AMD) and falls back on CPU if no CUDA devices are found.
+Player detection is a ROS node that takes images and detects whether a T or CT player model from CS:GO is present. We prioritize detection on GPU (supports both nVidia and AMD) and falls back on CPU if no CUDA devices are found.
 
 ## Config
  - `screen_msg` is the image topic we subscribe to for detections.
@@ -21,18 +21,18 @@ After that you have two options:
 
 ## Local
 
-Add include/sequoia to python path:
+Add include/Sequoia to python path:
 
 ```
 cd player_detection
-export PYTHONPATH="$PYTHONPATH:$(pwd)/include/sequoia/"
+export PYTHONPATH="$PYTHONPATH:$(pwd)/include/Sequoia/"
 ```
 
 You can probably find a better way to add the package to our dependencies but I couldn't figure it out so I'm just lazily adding the repo to PATH.
 
 Now we can launch our node. Remember to `source devel/setup.bash` first.
 
-`roslaunch player_detection detect.launch weights_dir:=$(rospack find player_detection)/include/sequoia/`
+`roslaunch player_detection detect.launch weights_dir:=$(rospack find player_detection)/include/Sequoia/`
 
 ## Docker
 
@@ -45,7 +45,7 @@ To build dockerfile:
 To run the dockerfile:
 ```
 sudo docker run -it --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --device=/dev/kfd --device=/dev/dri --group-add video --ipc=host --shm-size 8G \
---mount type=bind,source="$HOME"/ws/csgo_bot/src/player_detection/,target=/ws/src/player_detection \
+--mount type=bind,source="$(rospack find player_detection)",target=/ws/src/player_detection \
 --network host \
 csgo_bot/player_detection:latest
 

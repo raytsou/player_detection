@@ -4,4 +4,4 @@ pip install empy
 pip install catkin_pkg
 catkin_make
 source devel/setup.bash
-export PYTHONPATH="$PYTHONPATH:/ws/src/player_detection/include/sequoia/"
+export PYTHONPATH="$PYTHONPATH:/ws/src/player_detection/include/Sequoia/"

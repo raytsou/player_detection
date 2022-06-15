@@ -3,7 +3,7 @@
   <arg name="rate" default="20" />
   <arg name="screen_msg" default="/screencap/image" />
   <arg name="viz" default="true" />
-  <arg name="weights_dir" default="/ws/src/player_detection/include/sequoia/" />
+  <arg name="weights_dir" default="/ws/src/player_detection/include/Sequoia/" />
 
   <node name="player_detection_node" pkg="player_detection" type="player_detection_node.py" output="screen" clear_params="true">
     <param name="~rate" value="$(arg rate)" />
