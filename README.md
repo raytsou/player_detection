@@ -51,9 +51,11 @@ csgo_bot/player_detection:latest
 
 ```
 
-Remember to `source /ws/setup.sh` upon entering. Then we can launch the node from the container without needing to specify the weights directory.
+On entry, `source /ws/setup.sh`. This will catkin_make and run setup. Then we can launch the node from the container without needing to specify the weights directory.
 
 `roslaunch player_detection detect.launch`
+
+We can also do this all automaticaly by appending `./setup.sh --run` to the docker `run` command.
 
 # Performance
 
