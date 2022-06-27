@@ -42,20 +42,16 @@ To build dockerfile:
 
 `sudo docker build -f ./Dockerfile -t csgo_bot/player_detection .`
 
-To run the dockerfile:
+To run the node within the docker container:
 ```
 sudo docker run -it --cap-add=SYS_PTRACE --security-opt seccomp=unconfined --device=/dev/kfd --device=/dev/dri --group-add video --ipc=host --shm-size 8G \
 --mount type=bind,source="$(rospack find player_detection)",target=/ws/src/player_detection \
 --network host \
-csgo_bot/player_detection:latest
+csgo_bot/player_detection:latest ./setup.sh --run
 
 ```
 
-On entry, `source /ws/setup.sh`. This will catkin_make and run setup. Then we can launch the node from the container without needing to specify the weights directory.
-
-`roslaunch player_detection detect.launch`
-
-We can also do this all automaticaly by appending `./setup.sh --run` to the docker `run` command.
+To start the container only, run without `./setup.sh --run`. On entry, `source setup.sh`. This will catkin_make and source `devel/setup.bash`.
 
 # Performance
 
