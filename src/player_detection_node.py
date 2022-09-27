@@ -6,7 +6,7 @@ from std_msgs.msg import String
 from vision_msgs.msg import BoundingBox2D, BoundingBox2DArray
 from geometry_msgs.msg import Pose2D
 from cv_bridge import CvBridge
-from player_detection.detector import SequoiaDetector
+from Sequoia.detector import SequoiaDetector
 
 class PlayerDetectionNode(object):
   def __init__(self):

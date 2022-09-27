@@ -13,7 +13,6 @@ done
 source /opt/ros/noetic/setup.sh
 catkin_make
 source devel/setup.bash
-export PYTHONPATH="$PYTHONPATH:/ws/src/player_detection/include/Sequoia/"
 
 if [ "$RUN_DETECT" = true ] ; then
     roslaunch player_detection detect.launch

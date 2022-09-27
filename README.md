@@ -21,16 +21,7 @@ After that you have two options:
 
 ## Local
 
-Add include/Sequoia to python path:
-
-```
-cd player_detection
-export PYTHONPATH="$PYTHONPATH:$(pwd)/include/Sequoia/"
-```
-
-You can probably find a better way to add the package to our dependencies but I couldn't figure it out so I'm just lazily adding the repo to PATH.
-
-Now we can launch our node. Remember to `source devel/setup.bash` first.
+Simply launch our node the usual ROS way. Remember to `source devel/setup.bash` first.
 
 `roslaunch player_detection detect.launch weights_dir:=$(rospack find player_detection)/include/Sequoia/`
 
